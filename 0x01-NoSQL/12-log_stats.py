@@ -11,7 +11,7 @@ def log_stats():
     """
     client = MongoClient('mongodb://127.0.0.1:27017')
     logs = client.logs.nginx
-    print(f"{logs.count_documents({})} logs")
+    print(f"{logs.count_documents({})} logs\nMethods:")
     http_methods = ["GET", "POST", "PUT", "PATCH", "DELETE"]
     for method in http_methods:
         count = logs.count_documents({"method": method})
